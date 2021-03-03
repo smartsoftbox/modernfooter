@@ -18,6 +18,9 @@
 </script>
 <style type="text/css">
     {literal}
+    .block_newsletter {
+      background: none !important;
+    }
     .hideText, .hideList {
         display:none;
         margin-left: 5px;
