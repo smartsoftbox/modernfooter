@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 	addAdminButtons();
 
-	$('#getColors').live("click", function() {
+	$('body').on("click", '#getColors', function() {
 		var content = $('#ds-colors');
 		$.fancybox({
 			content: content,
@@ -51,7 +51,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$('#submitColors_1').live('click', function(){
+	$('body').on('click', '#submitColors_1', function(){
 		$.fancybox.showLoading();
 		var  data = $('.colorsForm form').serializeArray();
 
@@ -65,7 +65,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$('#ds-payment div').live({
+	$('body').on({
 	        mouseenter:
 	           function()
 	           {
@@ -76,9 +76,9 @@ $(document).ready(function(){
 	           {
 				$(this).find('.enable-icon').css("display", "none");
 	           }
-	 });
+	 }, '#ds-payment div');
 
-	$('#ds-links li').live({
+  $('body').on({
 	        mouseenter:
 	           function()
 	           {
@@ -89,9 +89,9 @@ $(document).ready(function(){
 	           {
 				$(this).find('.ds-delete-link').css("display", "none");
 	           }
-	 });
+	 }, '#ds-links li');
 
-	$('.ds-add-link').live('click', function(e){
+	$('body').on('click', '.ds-add-link', function(e){
 		$('#newlink #id_block').val( $(this).attr('id') );
 		var content = $('#ds-add-link-wrap').html();
 		$('form#newlink').remove();
@@ -105,7 +105,7 @@ $(document).ready(function(){
         return false;
 	});
 
-	$('.enable-icon').live('click', function(){
+	$('body').on('click', '.enable-icon', function(){
 		$.fancybox.showLoading();
 		var src =  $(this).parent().find('img').attr('src');
 		var fileNameIndex = src.lastIndexOf("/") + 1;
@@ -138,7 +138,7 @@ $(document).ready(function(){
 	var elements = '#ds-info p, #ds-info span, #ds-about p, #ds-copyrights p, #ds-links h3, #ds-adress_box p, #ds-links_right a';
 	elements +=',.ds-info_image img, #ds-payment img, #ds-basket img, .ds-link_box img, .ds-subscribe-info';
 
-	$( elements ).live({
+	$('body').on({
 	        mouseenter:
 	           function()
 	           {
@@ -151,12 +151,12 @@ $(document).ready(function(){
 	           {
 				$(this).css("opacity", "1");
 	           }
-	 });
+	 }, elements);
 
 	/*
 	* edit form for textarea
 	*/
-	$('#ds-info p, #ds-about p, #ds-copyrights p, #ds-payment h3').live('click', function(){
+	$('body').on('click', '#ds-info p, #ds-about p, #ds-copyrights p, #ds-payment h3', function(){
 	       $.fancybox.showLoading();
 		 var fieldname = $(this).attr('id');
 		 fieldname = fieldname.replace('ds-f-','');
@@ -173,7 +173,7 @@ $(document).ready(function(){
 	/*
 	* edit form for input
 	*/
-	$('#ds-info span, #ds-links h3, #ds-adress_box p, .ds-subscribe-info').live('click', function(){
+	$('body').on('click', '#ds-info span, #ds-links h3, #ds-adress_box p, .ds-subscribe-info', function(){
 		$.fancybox.showLoading();
 		 var fieldname = $(this).attr('id');
 		fieldname = fieldname.replace('ds-f-','');
@@ -190,7 +190,7 @@ $(document).ready(function(){
 	/*
 	* edit form for links
 	*/
-	$('#ds-links_right li a').live('click', function(e){
+	$('body').on('click', '#ds-links_right li a', function(e){
 	       $.fancybox.showLoading();
 	        e.preventDefault();
 		 var id_link = $(this).attr('id');
@@ -205,7 +205,7 @@ $(document).ready(function(){
           	return false;
 	 });
 
-	$('.ds-delete-link').live("click",function(e) {
+	$('body').on("click",'.ds-delete-link', function(e) {
 	       $.fancybox.showLoading();
 	       e.preventDefault();
 		 var id_link = $(this).parent().find('a').attr('id');
@@ -220,7 +220,7 @@ $(document).ready(function(){
 	});
 
 	//submit form for textarea
-	$('#submitfield').live('click', function(){
+	$('body').on('click', '#submitfield', function(){
 	        $.fancybox.showLoading();
 		 var  data = $('#formtextarea').serializeArray();
 		 //sent
@@ -236,7 +236,7 @@ $(document).ready(function(){
 	/*
 	* submit new link form for links
 	*/
-	$('#submitnewlink').live('click', function(){
+	$('body').on('click', '#submitnewlink', function(){
 		 $.fancybox.showLoading();
 		 var  newform = $('form#newlink').serializeArray();
 		 //sent
@@ -250,7 +250,7 @@ $(document).ready(function(){
 	 });
 
 	//submit form for links
-	$('#submitlink').live('click', function(){
+	$('body').on('click', '#submitlink', function(){
 	       $.fancybox.showLoading();
 		 var  data = $('#formtextarea').serializeArray();
 		 //sent
@@ -264,7 +264,7 @@ $(document).ready(function(){
 	 });
 
 	//change styles
-	$('#styles a').live('click', function(){
+	$('body').on('click', '#styles a', function(){
 		$.fancybox.showLoading();
 		var  id = $(this).attr('rel');
 		//sent
@@ -278,7 +278,7 @@ $(document).ready(function(){
 	});
 
 	//upload images on image click
-	$('.ds-info_image img, #ds-payment img, #ds-basket img, .ds-link_box img').live('click', function(){
+	$('body').on('click', '.ds-info_image img, #ds-payment img, #ds-basket img, .ds-link_box img', function(){
 	       $('input[name="uploadfile"]').remove();
 	       var src =  $(this).attr('src');
 		var fileNameIndex = src.lastIndexOf("/") + 1;
