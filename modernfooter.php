@@ -250,6 +250,25 @@ class Modernfooter extends Module
         Db::getInstance()->Execute('DROP TABLE IF EXISTS ' . _DB_PREFIX_ . 'modernfooter_info');
         Db::getInstance()->Execute('DROP TABLE IF EXISTS ' . _DB_PREFIX_ . 'modernfooter_info_lang');
 
+        Configuration::deleteByName('MEGAMENU_BACKGROUND1');
+        Configuration::deleteByName('MEGAMENU_BACKGROUND2');
+        Configuration::deleteByName('MEGAMENU_BACKGROUND3');
+        Configuration::deleteByName('MEGAMENU_BACKGROUND4');
+        Configuration::deleteByName('MEGAMENU_BACKGROUND5');
+
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR1');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR2');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR3');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR4');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR5');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR6');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR7');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR8');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR9');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR10');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR11');
+        Configuration::deleteByName('MEGAMENU_TEXTCOLOR12');
+
         if (!parent::uninstall()) {
             return false;
         }
