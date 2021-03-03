@@ -109,25 +109,21 @@ class Modernfooter extends Module
 
         //get default store if 1.5.x
         if (version_compare(_PS_VERSION_, '1.5.0.0') == +1) {
-            $id_shop = Configuration::get('PS_SHOP_DEFAULT');
+            $id_shops = Shop::getCompleteListOfShopsID();
         } else {
-            $id_shop = 0;
+            $id_shops = array(0);
         }
 
-        ModernFooterClass::insertDefaultData($id_shop);
-        ModernFooterInfoClass::insertDefaultData($id_shop);
+        foreach ($id_shops as $id_shop) {
+            ModernFooterClass::insertDefaultData($id_shop);
+            ModernFooterInfoClass::insertDefaultData($id_shop);
 
-        if (version_compare(_PS_VERSION_, '1.5.0.0') == +1) {
-            $id_shop = (int)(Configuration::get('PS_SHOP_DEFAULT'));
-        } else {
-            $id_shop = 0;
+            $src = dirname(__FILE__) . "/views/img/user/default";
+            $des = dirname(__FILE__) . "/views/img/user/" . $id_shop;
+
+            $this->deleteDirectory($des);
+            $this->recurseCopy($src, $des);
         }
-
-        $src = dirname(__FILE__) . "/views/img/user/default";
-        $des = dirname(__FILE__) . "/views/img/user/" . $id_shop;
-
-        $this->deleteDirectory($des);
-        $this->recurseCopy($src, $des);
 
         if (version_compare(_PS_VERSION_, '1.7.0', '>=') === true) {
             $news = Module::getInstanceByName('ps_emailsubscription');
@@ -581,7 +577,7 @@ class Modernfooter extends Module
         if (!$this->isCached('modernfooter-header.tpl', $this->getCacheId())) {
             $this->getConfigurationValues();
         }
-        
+
         return $this->display(__FILE__, 'views/templates/front/modernfooter-header.tpl');
     }
 
