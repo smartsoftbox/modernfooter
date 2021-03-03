@@ -1,0 +1,97 @@
+/* ADMIN MODERN FOOTER STYLES  */
+#ds-add-link-wrap, #ds-colors {
+    display: none;
+}
+.lessopacity {
+    opacity: 0.5 !important;
+}
+.ds-add-link{
+    width:16px;
+    height:16px;
+    background: #c1c1c1 url("../img/add.png") no-repeat;
+    position: absolute;
+}
+#ds-links li {
+    position: relative;
+}
+.enable-icon {
+    background: url("../img/remove.png") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    cursor:pointer;
+}
+.ds-delete-link{
+    background: url("../img/remove.png") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 16px;
+    display:none;
+    cursor:pointer;
+}
+#ds-footer .mColorPickerTrigger {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 45px;
+    z-index: 999;
+    background: none;
+    border: none;
+}
+.fancybox-inner #module_form_1 {
+    min-width: 800px !important;
+}
+.mColorPickerInput{
+    min-width: 200px !important;
+}
+#ds-footer .row {
+    position: relative;
+}
+.fancybox-inner #content {
+    margin-left: 0px !important;
+    padding-top: 0px !important;
+}
+#formtextarea #fieldset_form, #newlink #formtextarea {
+    min-width: 400px;
+}
+#fieldset_form textarea{
+    min-height: 200px;
+}
+#getColors {
+    color: #00aff0;
+    cursor: pointer;
+    margin-top: 14px;
+    width: 100px !important;
+}
+#ds-load-data {
+    margin-right: 10px;
+    text-decoration: none;
+    text-underline: none;
+    margin-top: 14px;
+    width: 100px !important;
+}
+#ds-footer h3:not(.modal-title), #ds-footer .panel-heading
+{
+    height: auto !important;
+    border: none !important;
+    text-transform: none !important;
+}
+#ds-footer h3 {
+    margin-left: 0px;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+#ds-footer li {
+    margin-bottom: 0.3125rem !important;
+    list-style: none;
+}
+#ds-footer ul {
+    padding-left: 0px;
+}
+#ds-footer {
+    font-size: 1rem !important;
+}
