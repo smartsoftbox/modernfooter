@@ -18,7 +18,7 @@ class Modernfooter extends Module
     {
         $this->name = 'modernfooter';
         $this->tab = 'front_office_features';
-        $this->version = '2.5.4';
+        $this->version = '2.5.5';
         $this->author = 'DevSoft';
         $this->module_key = 'a1310080644c9671d5bc5b1d7e477041';
         $this->bootstrap = true;
@@ -328,8 +328,8 @@ class Modernfooter extends Module
             . _MODULE_DIR_ . 'modernfooter/views/js/modernfooter-admin.js"></script>';
         $output .= '<script type="text/javascript" src="'
             . _MODULE_DIR_ . 'modernfooter/views/js/ajaxupload.3.5.js"></script>';
-        $output .= '<script type="text/javascript" src="'
-            . _MODULE_DIR_ . 'modernfooter/views/js/jquery-scoped.js"></script>';
+//        $output .= '<script type="text/javascript" src="'
+//            . _MODULE_DIR_ . 'modernfooter/views/js/jquery-scoped.js"></script>';
         $output .= '<script type="text/javascript">
 				         var urlJson = "' . $this->context->link->getAdminLink('AdminModules', false).
                         '&ajax=1&configure='.$this->name.
